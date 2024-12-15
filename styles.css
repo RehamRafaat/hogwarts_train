@@ -1,0 +1,316 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(./imgs/pngtree-romantic-sky-night-background-picture-image_2336710-transformed.png);
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+}
+
+/*--- dementore ------*/
+
+.dementors{
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    margin-top: 200px;
+}
+.dementors img{
+    width: 250px;
+    height: 150px;
+    animation: dementor 3s linear infinite;
+}
+@keyframes dementor {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateY(-10%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+/*--------------------------------------------------------*/
+/*--------------------------------------------------------*/
+/*---- train -----*/
+.track {
+    width: 100%;
+    height: 350px;
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    background-repeat: repeat-x;
+    animation: track 5s linear infinite;
+}
+
+.track img {
+    height: 100%;
+    width: auto;
+}
+.train {
+    width: 90%;
+    height: auto;
+    position: absolute;
+    bottom: -310px; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.train img {
+    width: 100%;
+    height: auto;
+}
+
+.wheel-container,.wheel-container2 , .wheel-container3, .wheel-container4, .wheel-container5, .wheel-container6, .wheel-container7, .wheel-container8, .wheel-container9, .wheel-container10{
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    left: 81.5%;
+    bottom: 152px;
+    transform: translateX(-50%);
+    width: 10%; 
+    z-index: 4;
+}
+
+.wheel-container .wheel {
+    width: 50px; 
+    height: 50px;
+    animation: spin 1s linear infinite; 
+}
+.wheel-container2, .wheel-container3, .wheel-container4, .wheel-container5, .wheel-container6, .wheel-container7, .wheel-container8, .wheel-container9, .wheel-container10 {
+    width: 4%;
+    bottom: 160px;
+}
+.wheel-container2{
+    left: 88.5%;
+}
+.wheel-container3 {
+    left: 10.5%;
+}
+.wheel-container4 {
+    left: 18.5%;
+}
+.wheel-container5 {
+    left: 27.5%;
+}
+.wheel-container6{
+    left: 35.5%;
+}
+.wheel-container7{
+    left: 44.5%;
+}
+.wheel-container8{
+    left: 52.5%;
+}
+.wheel-container9{
+    left: 61.5%;
+}
+.wheel-container10{
+    left: 69.5%;
+}
+.wheel-container2 .wheel, .wheel-container3 .wheel, .wheel-container4 .wheel, .wheel-container5 .wheel, .wheel-container6 .wheel, .wheel-container7 .wheel, .wheel-container8 .wheel, .wheel-container9 .wheel, .wheel-container10 .wheel{
+    width: 20px; 
+    height: 20px;
+    animation: spin 1s linear infinite; 
+}
+.wheel img {
+    width: 100%;
+    height: 100%;
+}
+@keyframes track {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-140%);
+    }
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*--------------------------------------------------------*/
+/*--------------------------------------------------------*/
+/*---- background -----*/
+
+.mountain {
+    position: absolute;
+    z-index: 1;
+    width: 200%;
+    bottom: 0;
+    background-repeat: repeat-x;
+    animation: trees 20s linear infinite;
+}
+
+.mountain img {
+    width: 140%;
+    height: auto;
+}
+
+@keyframes trees {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-20%);
+    }
+}
+
+
+/*-------------------------*/
+/* train smoke */
+ul{
+    position: absolute;
+    bottom: 343px;
+    left: 86%;
+    transform: translate(-50%);
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+}
+li{
+    position: absolute;
+    list-style: none;
+    width: 50px;
+    height: 50px;
+    background: #807c7c;
+    border-radius: 50%;
+    opacity: 0;
+    filter: blur(10px);
+}
+li:nth-child(even)
+{
+    animation: animationEven 1.5s linear infinite;
+}
+li:nth-child(odd)
+{
+    animation: animationOdd 1.5s linear infinite;
+}
+@keyframes animationEven{
+    0%{
+        transform: translate(0,0) scale(1);
+        opacity: 0.7;
+        filter: blur(5px);
+    }
+    100%{
+        transform: translate(50px,-100px) scale(2);
+        opacity: 0;
+        filter: blur(7px);
+    }
+}
+@keyframes animationOdd{
+    0%{
+        transform: translate(0,0) scale(1);
+        opacity: 0.7;
+        filter: blur(5px);
+    }
+    100%{
+        transform: translate(-50px,-200px) scale(3);
+        opacity: 0;
+        filter: blur(7px);
+    }
+}
+li:nth-child(1){
+    animation-delay: 0s;
+}
+li:nth-child(2){
+    animation-delay: .4s;
+}
+li:nth-child(3){
+    animation-delay: 0.8s;
+}
+li:nth-child(4){
+    animation-delay: 1.2s;
+}
+li:nth-child(5){
+    animation-delay: 1.6s;
+}
+li:nth-child(6){
+    animation-delay: 2s;
+}
+li:nth-child(7){
+    animation-delay: 2.4s;
+}
+li:nth-child(8){
+    animation-delay: 2.8s;
+}
+/*--------------------------------------------------------*/
+/*--------------------------------------------------------*/
+/*--------------------------*/
+/*clouds */
+
+.overLayer1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    overflow: hidden;
+}
+.overLayer1 {
+    background: rgba(0, 0, 0, 0.649)
+}
+#clouds {
+    position: absolute;
+    top:0; left:0;
+    width:100%; height: 100%;
+    z-index: 10;
+}
+.cloud {
+    position: absolute;
+    width: 100%; height:100%;
+    left: 0; top: 0;
+}
+@keyframes cloudFly {
+    from {
+        -webkit-transform: translateX(100%)
+    }
+
+    to {
+        -webkit-transform: translateX(-100%)
+    }
+}
+
+.c1 {
+    background: url(./imgs/clouds/cloud1-c.png) no-repeat center center;
+    background-size: cover;
+    animation: cloudFly 45s infinite linear
+}
+
+.c2 {
+    background: url(./imgs/clouds/cloud2-c.png) no-repeat center center;
+    background-size: cover;
+    animation: cloudFly 25s infinite linear
+}
+
+.c3 {
+    background: url(./imgs/clouds/cloud3-c.png) no-repeat center center;
+    background-size: cover;
+    animation: cloudFly 65s infinite linear
+}
+.stimeLayer {
+    position: absolute;
+    overflow: hidden
+}
